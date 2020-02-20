@@ -1,0 +1,78 @@
+i)Check whether all commands are ignored before PLACE
+MOVE
+LEFT
+RIGHT
+REPORT
+Output: "Output should be empty"
+
+ii)Check whether out of boundary condition validated while placing on both x and y boundaries
+PLACE 6,0,NORTH
+REPORT
+Output: Empty
+
+PLACE 0,6,NORTH
+REPORT
+Output: Empty
+
+PLACE 6,6,EAST
+REPORT
+Output: Empty
+
+iii)Check whether out of boundary condition validated after properly placing and then moving in all directions
+
+PLACE 0,0,SOUTH
+MOVE
+REPORT
+Output: 0 1 SOUTH
+
+PLACE 2,3,EAST
+MOVE
+MOVE
+MOVE
+REPORT
+Output: 4 3 EAST
+
+PLACE 2,3,WEST
+MOVE
+MOVE
+MOVE
+MOVE
+REPORT 0 3 WEST
+
+PLACE 0,2,NORTH
+MOVE
+MOVE
+MOVE
+REPORT
+
+iv) Normal positive scenarios
+
+PLACE 0,0,NORTH
+REPORT
+Output: 0 0 NORTH
+
+PLACE 0,0,NORTH
+MOVE
+REPORT
+Output: 0,1,NORTH
+
+PLACE 0,0,NORTH
+LEFT
+REPORT
+Output: 0,0,WEST
+
+PLACE 1,2,EAST
+MOVE
+MOVE
+LEFT
+MOVE
+REPORT
+Output: 3,3,NORTH
+
+PLACE 1,2,EAST
+MOVE
+MOVE
+RIGHT
+MOVE
+REPORT
+Output:- 3 1 SOUTH
